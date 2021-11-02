@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       tasks: []
     }
+    console.log(this)
 
     this.addTask = this.addTask.bind(this)
 
@@ -17,13 +18,18 @@ class App extends React.Component {
 
   // Ajout d'une nouvelle tâche //
   addTask(str) {
-    
+    console.log(str)
+    let object = {description: str, status: "To do"}
+    this.setState({ tasks: [object, ...this.state.tasks] })
   }
 
   render() {
     return (
       <div>
-          <Form/>
+          <Form
+          addTask={this.addTask}
+          // newTask=          
+          />
       </div>
     );
   }
