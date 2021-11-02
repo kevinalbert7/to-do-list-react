@@ -21,6 +21,11 @@ class Form extends React.Component {
     // soumis au click & doit appeler la méthode addTask
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({ task: ""})
+        // this.state.task = ""
+        this.props.addTask(task.value)
+        this.setState({ addTask: task.target.value})
+        console.log(task)
     }
 
     render() {
@@ -31,10 +36,14 @@ class Form extends React.Component {
                         <label className="form-label fs-1">To do list</label>
                         <input 
                         className="form-control"
+                        value={this.state.task}
                         onChange={this.handleTaskDescriptionChange}
                         />
                         <div className="form-text"></div>
                         <button type="submit" className="btn btn-primary">Ajouter à ma liste</button>
+                    </div>
+                    <div>
+                        {this.state.task}
                     </div>
                 </form>   
             </div>
