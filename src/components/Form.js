@@ -15,17 +15,17 @@ class Form extends React.Component {
 
     // changement de tâches //
     handleTaskDescriptionChange(e) {
+        console.log("Données de l'input:", this)
         this.setState({ task: e.target.value })
     }
 
     // soumis au click & doit appeler la méthode addTask
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ task: ""})
-        // this.state.task = ""
-        this.props.addTask(task.value)
-        this.setState({ addTask: task.target.value})
-        console.log(task)
+        this.setState({ task: e.target.value})
+        this.state = { task: ""}
+        // this.setState({ addTask: task.target.value})
+        // console.log(task)
     }
 
     render() {
@@ -36,7 +36,7 @@ class Form extends React.Component {
                         <label className="form-label fs-1">To do list</label>
                         <input 
                         className="form-control"
-                        value={this.state.task}
+                        value={this.state.task || ""}
                         onChange={this.handleTaskDescriptionChange}
                         />
                         <div className="form-text"></div>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Form from './components/Form'
+import List from './components/List'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {
@@ -10,7 +11,7 @@ class App extends React.Component {
     this.state = {
       tasks: []
     }
-    console.log(this)
+    console.log("le state de tasks:", this.state.tasks)
 
     this.addTask = this.addTask.bind(this)
 
@@ -18,7 +19,6 @@ class App extends React.Component {
 
   // Ajout d'une nouvelle tâche //
   addTask(str) {
-    console.log(str)
     let object = {description: str, status: "To do"}
     this.setState({ tasks: [object, ...this.state.tasks] })
   }
@@ -27,8 +27,10 @@ class App extends React.Component {
     return (
       <div>
           <Form
-          addTask={this.addTask}
-          // newTask=          
+          addTask={this.addTask}        
+          />
+          <List
+          tasks={this.tasks}
           />
       </div>
     );
