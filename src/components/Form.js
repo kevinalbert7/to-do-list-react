@@ -23,7 +23,7 @@ class Form extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.setState({ task: e.target.value})
-        this.state = { task: ""}
+        // this.state = { task: ""}
         // this.setState({ addTask: task.target.value})
         // console.log(task)
     }
@@ -32,18 +32,16 @@ class Form extends React.Component {
         return (
             <div className="container-fluid">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="mb-3">
+                    <div className="mb-3 col-8">
                         <label className="form-label fs-1">To do list</label>
+                        
                         <input 
                         className="form-control"
                         value={this.state.task || ""}
                         onChange={this.handleTaskDescriptionChange}
                         />
-                        <div className="form-text"></div>
-                        <button type="submit" className="btn btn-primary">Ajouter à ma liste</button>
-                    </div>
-                    <div>
-                        {this.state.task}
+                        
+                        <button type="submit" className="mt-3 btn btn-primary">Ajouter à ma liste</button>
                     </div>
                 </form>   
             </div>
