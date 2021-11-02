@@ -15,8 +15,8 @@ class Form extends React.Component {
 
     // changement de tâches //
     handleTaskDescriptionChange(e) {
-        console.log(e.target.value)
-      this.setState({ task: e.target.value })
+        // console.log(e.target.value)
+      this.setState({ task: this.props.addTask })
     }
 
     // soumis au click & doit appeler la méthode add.Task//

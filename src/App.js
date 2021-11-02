@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Form from './Component/Form'
+import Form from './components/Form'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends React.Component {
@@ -8,9 +8,16 @@ class App extends React.Component {
     super ()
 
     this.state = {
-      tasks: [""]
+      tasks: []
     }
 
+    this.addTask = this.addTask.bind(this)
+
+  }
+
+  // Ajout d'une nouvelle tâche //
+  addTask(str) {
+    
   }
 
   render() {
